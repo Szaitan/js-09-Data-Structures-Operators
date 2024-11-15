@@ -278,3 +278,13 @@ function printBookInfo({ title, author, year = 'year unknown' }) {
 
 printBookInfo(books[0]);
 printBookInfo(books[6]);
+
+// Assigment 11
+const bookAuthors = [...books[0].author, ...books[1].author];
+console.log(bookAuthors);
+
+// Assigment 12
+function spellWord(str) {
+  console.log(...str);
+}
+spellWord('JavaScript');
