@@ -49,3 +49,40 @@ const restaurant = {
     );
   },
 };
+
+const restaurant1 = {
+  name: 'Capri',
+  numGuests: 0,
+};
+
+const restaurant2 = {
+  name: 'La Pizza',
+  owner: 'Giovanni Rossi',
+};
+
+// OR assigment operator
+// Typical short circuiting
+restaurant1.numGuests = restaurant1.numGuests || 10;
+restaurant2.numGuests = restaurant2.numGuests || 10;
+
+// And here is the usage of OR assigment opearator.
+restaurant1.numGuests ||= 10;
+restaurant2.numGuests ||= 10;
+
+// However we wills till have the same problem if the num value is 0
+// For this we will use ?? operator
+restaurant1.numGuests ??= 10;
+restaurant2.numGuests ??= 10;
+
+// ..................................
+// AND assigment operator
+// Typical short circuiting
+// restaurant1.owner = restaurant1.owner && '<ANNONYMUS>';
+// restaurant2.owner = restaurant2.owner && '<ANNONYMUS>';
+
+// AND assigment operator
+restaurant1.owner &&= '<ANNONYMUS>';
+restaurant2.owner &&= '<ANNONYMUS>';
+
+console.log(restaurant1);
+console.log(restaurant2);
