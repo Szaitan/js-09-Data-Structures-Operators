@@ -90,6 +90,7 @@ const {
   },
 } = restaurant;
 console.log(o, c);
+<<<<<<< HEAD
 
 // ........................................................................//
 
@@ -131,3 +132,5 @@ console.log(newRestaurant);
 newRestaurant.mainMenu.push('test');
 console.log(restaurant.mainMenu);
 console.log(newRestaurant.mainMenu);
+=======
+>>>>>>> 855045194c8e964ac8d46b2705822ca161ca8b43
