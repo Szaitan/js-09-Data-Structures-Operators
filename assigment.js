@@ -338,3 +338,61 @@ for (let i = 0; i < books.length; i++) {
   books[i].highlighted &&= !(books[i].thirdParty.goodreads.rating < 4.2);
 }
 console.log(books);
+
+// The for-of loop
+// Assigment 21
+
+let pageSum = 0;
+for (obj of books) {
+  pageSum += obj.pages;
+}
+console.log(pageSum);
+
+// Assigment 22
+const allAuthors = [];
+for (obj of books) {
+  if (typeof obj.author === 'string') {
+    allAuthors.push(obj.author);
+  } else {
+    allAuthors.push(...obj.author);
+  }
+}
+console.log(allAuthors);
+
+// Assigment 23
+for ([i, obj] of books.entries()) {
+  console.log(`${i + 1}. ${obj.author}`);
+}
+
+// Enhanced Object Literals
+// Assigment 24
+const bookData = [
+  ['title', 'Computer Networking: A Top-Down Approach'],
+  ['author', ['James F. Kurose', 'Keith W. Ross']],
+  ['publisher', 'Addison Wesley'],
+];
+
+// Do the rest
+const newBook = {
+  [bookData[0][0]]: bookData[0][1],
+  [bookData[1][0]]: bookData[1][1],
+  [bookData[2][0]]: bookData[2][1],
+};
+console.log(newBook);
+
+// Assigment 25
+const pages = 880;
+
+const newBook2 = {
+  title: 'The C Programming Language',
+  author: ['Brian W. Kernighan', 'Dennis M. Ritchie'],
+  pages,
+};
+
+// Optional Chaining (?.)
+// Assigment 26
+function getFirstKeyword(obj) {
+  return obj?.keywords?.[0] ?? 'undefined ';
+}
+
+console.log(getFirstKeyword(books[3]));
