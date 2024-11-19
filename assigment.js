@@ -316,3 +316,25 @@ for (let i = 0; i < books.length; i++) {
   books[i].onlineContent &&
     console.log(`"${books[i].title}" provides online content`);
 }
+
+// The Nullish Coalescing Operator (??)
+// Assigment 18
+for (let i = 0; i < books.length; i++) {
+  books[i].onlineContent ??
+    console.log(
+      `"${books[i].title}" provides no data about its online content`
+    );
+}
+
+// Logical Assignments Operators
+// Assigment 19
+for (let i = 0; i < books.length; i++) {
+  books[i].edition ||= 1;
+}
+console.log(books);
+
+// Assigment 20
+for (let i = 0; i < books.length; i++) {
+  books[i].highlighted &&= !(books[i].thirdParty.goodreads.rating < 4.2);
+}
+console.log(books);
