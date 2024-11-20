@@ -1,3 +1,5 @@
+'use strict';
+
 const restaurnat = {
   orderPizza: function (firstIngredient, ...restOfIngredients) {
     console.log(`${firstIngredient}`);

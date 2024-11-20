@@ -1,3 +1,5 @@
+'use strict';
+
 const books = [
   {
     title: 'Algorithms',
@@ -343,14 +345,14 @@ console.log(books);
 // Assigment 21
 
 let pageSum = 0;
-for (obj of books) {
+for (let obj of books) {
   pageSum += obj.pages;
 }
 console.log(pageSum);
 
 // Assigment 22
 const allAuthors = [];
-for (obj of books) {
+for (let obj of books) {
   if (typeof obj.author === 'string') {
     allAuthors.push(obj.author);
   } else {
@@ -360,7 +362,7 @@ for (obj of books) {
 console.log(allAuthors);
 
 // Assigment 23
-for ([i, obj] of books.entries()) {
+for (let [i, obj] of books.entries()) {
   console.log(`${i + 1}. ${obj.author}`);
 }
 
@@ -396,3 +398,25 @@ function getFirstKeyword(obj) {
 }
 
 console.log(getFirstKeyword(books[3]));
+
+// Looping Objects: Object Keys, Values and Entries
+// Assigment 27
+const entries = [];
+
+console.log(books[0].thirdParty.goodreads);
+for (let objName of Object.keys(books[0].thirdParty.goodreads)) {
+  entries.push([objName]);
+}
+console.log(entries);
+
+// Assigment 28
+for (let [i, value] of Object.values(books[0].thirdParty.goodreads).entries()) {
+  entries[i].push(value);
+}
+
+// Assigment 29
+const entries2 = Object.entries(books[0].thirdParty.goodreads);
+
+// Assigment 30
+console.log(entries);
+console.log(entries2);
