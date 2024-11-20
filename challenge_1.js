@@ -76,3 +76,31 @@ printGoals(...game.scored);
 // Part 7
 team1 < team2 && console.log('Team 1 will win!');
 team1 > team2 && console.log('Team 2 will win!');
+
+console.log('------------------ Part 2 -------------------');
+// Part 8
+for (let [i, scorer] of game.scored.entries()) {
+  console.log(`Goal ${i + 1}: ${scorer}`);
+}
+
+// Part 9
+let total = 0;
+for (let val of Object.values(game.odds)) {
+  total += val;
+}
+let avgTotal = total / Object.keys(game).length;
+console.log(avgTotal);
+
+// Part 10
+for (let [key, val] of Object.entries(game.odds)) {
+  game[key] && console.log(`Odd of victory ${game[key]}: ${val}`);
+  game?.[key] || console.log(`Odd of draw: ${val}`);
+}
+
+// Part 11
+const scores = {};
+for (let val of game.scored) {
+  scores[val] && (scores[val] += 1);
+  scores[val] || (scores[val] = 1);
+}
+console.log(scores);
