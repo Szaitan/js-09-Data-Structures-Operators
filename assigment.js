@@ -391,6 +391,7 @@ const newBook2 = {
   pages,
 };
 
+console.log('-------------------BREAK-------------------');
 // Optional Chaining (?.)
 // Assigment 26
 function getFirstKeyword(obj) {
@@ -399,6 +400,7 @@ function getFirstKeyword(obj) {
 
 console.log(getFirstKeyword(books[3]));
 
+console.log('-------------------BREAK-------------------');
 // Looping Objects: Object Keys, Values and Entries
 // Assigment 27
 const entries = [];
@@ -421,6 +423,7 @@ const entries2 = Object.entries(books[0].thirdParty.goodreads);
 console.log(entries);
 console.log(entries2);
 
+console.log('-------------------BREAK-------------------');
 // Sets
 // Assigment 31
 const allKeywords = [];
@@ -449,3 +452,24 @@ console.log(uniqueKeywordsArr);
 // Assigment 36
 uniqueKeywords.clear();
 console.log(uniqueKeywords);
+
+console.log('-------------------BREAK-------------------');
+// Maps
+// Assigment 37
+const bookMap = new Map([
+  ['title', 'Clean Code'],
+  ['author', 'Robert C. Martin'],
+]);
+console.log(bookMap);
+
+// Assigment 38
+bookMap.set('pages', 464);
+
+// Assigment 39
+console.log(`"${bookMap.get('title')} by ${bookMap.get('author')}"`);
+
+// Assigment 40
+console.log(bookMap.size);
+
+// Assigment 41
+bookMap.has('author') && console.log('The author of the book is known');
