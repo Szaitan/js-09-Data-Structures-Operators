@@ -473,3 +473,15 @@ console.log(bookMap.size);
 
 // Assigment 41
 bookMap.has('author') && console.log('The author of the book is known');
+
+console.log('-------------------BREAK-------------------');
+// Maps: iteration
+// Assigment 42
+const firstBookMap = new Map(Object.entries(books[0]));
+console.log(firstBookMap);
+
+// Assigment 43
+for (const [key, value] of firstBookMap)
+  typeof value === 'number' &&
+    console.log(`${key} with value ${value} as number`);
+console.log('-------------------BREAK-------------------');

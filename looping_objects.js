@@ -47,17 +47,19 @@ const restaurant = {
   },
 };
 
-// Looping over property name
+// Looping over object is not possible, without returing array with data from it
+// Looping over property name using .keys(), .values() and .entries() property
 // Object.keys() returns array with property names
 const properties = Object.keys(openingHours);
 console.log(properties);
 
-for (const day of Object.keys(openingHours)) {
+for (const day of properties) {
   console.log(day);
 }
 
 // Looping over property values
 // Object.values() returns the value of key property
+
 for (const val of Object.values(openingHours)) {
   console.log(val);
 }
