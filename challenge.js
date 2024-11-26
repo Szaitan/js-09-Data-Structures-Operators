@@ -134,8 +134,12 @@ console.log(gameEvents);
 console.log(
   `An event happened, on  average, every ${90 / gameEvents.size} minutes`
 );
+const gameTime = [...gameEvents][gameEvents.size - 1][0];
+console.log(
+  `An event happened, on  average, every ${gameTime / gameEvents.size} minutes`
+);
 
-// PArt 15
+// Part 15
 for (let [key, val] of gameEvents) {
   key <= 45
     ? console.log(`[FIRST HALF]${key}: ${val}`)
