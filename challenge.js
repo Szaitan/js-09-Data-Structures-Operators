@@ -104,3 +104,40 @@ for (let val of game.scored) {
   scores[val] || (scores[val] = 1);
 }
 console.log(scores);
+
+console.log('----------------- Part 3 ----------------');
+// Challenge 3
+// Part 12
+
+const gameEvents = new Map([
+  [17, '⚽ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🔶 Yellow card'],
+  [69, '🔴 Red card'],
+  [70, '🔁 Substitution'],
+  [72, '🔁 Substitution'],
+  [76, '⚽ GOAL'],
+  [80, '⚽ GOAL'],
+  [92, '🔶 Yellow card'],
+]);
+
+const events = new Set([...gameEvents.values()]);
+console.log(events);
+
+// Part 13
+gameEvents.delete(64);
+console.log(gameEvents);
+
+// Part 14
+console.log(
+  `An event happened, on  average, every ${90 / gameEvents.size} minutes`
+);
+
+// PArt 15
+for (let [key, val] of gameEvents) {
+  key <= 45
+    ? console.log(`[FIRST HALF]${key}: ${val}`)
+    : console.log(`[SECOND HALF]${key}: ${val}`);
+}
