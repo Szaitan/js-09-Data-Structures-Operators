@@ -484,4 +484,26 @@ console.log(firstBookMap);
 for (const [key, value] of firstBookMap)
   typeof value === 'number' &&
     console.log(`${key} with value ${value} as number`);
+
 console.log('-------------------BREAK-------------------');
+// Working with Strings - Part 1
+// Assigment 44
+console.log(books[0].ISBN[6]);
+console.log(books[0].ISBN[4]);
+console.log(books[0].ISBN[9]);
+console.log(books[0].ISBN[8]);
+
+// Assigment 45
+const quote =
+  'A computer once beat me at chess, but it was no match for me at kick boxing';
+console.log(quote.indexOf('chess'));
+
+// Assigment 46
+console.log(quote.slice(-6));
+
+// Assigment 47
+function isContributor(authorName) {
+  const containCont = authorName.indexOf('(Contributor)');
+  containCont !== -1 ? console.log(true) : console.log(false);
+}
+isContributor('Julie Sussman (Contributor)');
