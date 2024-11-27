@@ -43,3 +43,36 @@ function checkSet(seat) {
 }
 
 checkSet('11B');
+
+// Second Part
+// Affecting string by lowercase and uppercase
+const airline = 'TAP Air Portugal';
+
+console.log(airline.toUpperCase());
+console.log(airline.toLowerCase());
+
+// Fixing the capitalization in name
+const passenger = 'mIcHal';
+const passengerCorrect =
+  passenger[0].toUpperCase() + passenger.slice(1).toLowerCase();
+console.log(passengerCorrect);
+
+// Comapring emails
+const email = 'hello@mk.pl';
+const loginEmail = '  HeLLo@mK.pl \n';
+
+// Trim allwos us to remove white spaces amd new lines
+const correctEmail = email.toLowerCase().trim();
+console.log(correctEmail);
+console.log(correctEmail === email);
+
+// Replaceing symbols with .replace() method or replaceAll()
+const priceBG = '299,23&';
+const priceUK = priceBG.replace(',', '.').replace('&', '$');
+console.log(priceUK);
+
+// Booleans for Strings - includes(), startWith() and endsWith() methods
+const mk = 'Super Duper Turbo';
+console.log(mk.includes('uper')); // true
+console.log(mk.startsWith('Sup')); // true
+console.log(mk.endsWith('urbo')); // true
