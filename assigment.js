@@ -507,3 +507,48 @@ function isContributor(authorName) {
   containCont !== -1 ? console.log(true) : console.log(false);
 }
 isContributor('Julie Sussman (Contributor)');
+
+('-------------------BREAK-------------------');
+// Working with Strings - Part 2
+// Assigment 48
+function normalizeAuthorName(nameString) {
+  const nameStringNormalize = nameString.toLowerCase().trim();
+
+  const combineName =
+    nameStringNormalize[0].toUpperCase() +
+    nameStringNormalize.slice(1, nameStringNormalize.indexOf(' ') + 1) +
+    nameStringNormalize[nameStringNormalize.indexOf(' ') + 1].toUpperCase() +
+    nameStringNormalize.slice(nameStringNormalize.indexOf(' ') + 2);
+
+  if (combineName.includes(`(contributor)`)) {
+    return combineName.replace(' (contributor)', '');
+  } else {
+    return combineName;
+  }
+}
+
+console.log(normalizeAuthorName('Mike typSON'));
+
+// Assigment 49
+console.log(books[1].title.replace('Programs', 'Software'));
+
+// Assigment 50
+function logBookTheme(title) {
+  const lowerTitle = title.toLowerCase();
+  if (lowerTitle.startsWith('computer')) {
+    console.log('This book is about computers');
+  } else if (
+    lowerTitle.includes('algorithms') &&
+    lowerTitle.includes('structures')
+  ) {
+    console.log('This book is about algorithms and data structures');
+  } else if (
+    lowerTitle.endsWith('system') ||
+    (lowerTitle.endsWith('systems') && !lowerTitle.includes('operating'))
+  ) {
+    console.log(
+      'This book is about some systems, but definitely not about operating systems'
+    );
+  }
+}
+logBookTheme("Computer Systems: A Programmer's Perspective");
