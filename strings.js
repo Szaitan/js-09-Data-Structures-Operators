@@ -76,3 +76,48 @@ const mk = 'Super Duper Turbo';
 console.log(mk.includes('uper')); // true
 console.log(mk.startsWith('Sup')); // true
 console.log(mk.endsWith('urbo')); // true
+
+// Part 3
+// Split method which returns array. We can pass parameter by which input should be split.
+console.log('Mare+Darek+Ogarek'.split('+'));
+
+// We can use deconstruction on splited parts
+const [name1, name2, ...name3] = 'World of WarCraft: The Burning Crusade'.split(
+  ' '
+);
+console.log(name1, name2, name3);
+
+// Join method allows us to combine elements in array with each other
+const newName = ['The best dlc of WoW was:', name1, name2, ...name3].join(' ');
+console.log(newName);
+
+// Example which combine split and slice
+function capitalizeName(name) {
+  const splitName = name.split(' ');
+  const finalName = [];
+  for (let n of splitName) {
+    finalName.push(n[0].toUpperCase() + n.slice(1));
+  }
+  console.log(finalName.join(' '));
+}
+
+capitalizeName('michal krepiniewicz');
+
+// Padding allows us to add characters into the string until reach specific number
+const message = 'Badumcisz';
+console.log(message.padStart(15, '+')); // ++++++Badumcisz
+console.log(message.padEnd(15, '-')); // Badumcisz------
+
+// Example with card number
+function maskeCardNumbers(num) {
+  const numStr = num + '';
+  console.log(numStr.slice(-4).padStart(numStr.length, '*'));
+}
+maskeCardNumbers(1234567890);
+
+// Repeat method allows us to repeat string n times
+// We can repeat even symbols like ✈️
+const message2 = 'This is test! ';
+console.log(message2.repeat(5));
+
+console.log(`The are 5 planes in port: ${'✈️'.repeat(5)}`);
