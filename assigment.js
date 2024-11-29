@@ -508,7 +508,7 @@ function isContributor(authorName) {
 }
 isContributor('Julie Sussman (Contributor)');
 
-('-------------------BREAK-------------------');
+console.log('-------------------BREAK-------------------');
 // Working with Strings - Part 2
 // Assigment 48
 function normalizeAuthorName(nameString) {
@@ -552,3 +552,46 @@ function logBookTheme(title) {
   }
 }
 logBookTheme("Computer Systems: A Programmer's Perspective");
+
+console.log('-------------------BREAK-------------------');
+// Working with Strings - Part 3
+// Assigment 51
+
+const bookCategories =
+  'science;computing;computer science;algorithms;business;operating systems;networking;electronics';
+
+function logBookCategories(cate) {
+  for (let n of cate.split(';')) console.log(n);
+}
+
+logBookCategories(bookCategories);
+
+// Assigment 52
+function getKeywordsAsString(books) {
+  const keywords = [];
+
+  for (const book of books) {
+    keywords.push(...book.keywords);
+  }
+
+  const uniqueKeywords = [...new Set(keywords)];
+
+  return uniqueKeywords.join(';');
+}
+getKeywordsAsString(books);
+
+// Assigment 3
+const bookChapters = [
+  ['The Basics', 14],
+  ['Sorting', 254],
+  ['Searching', 372],
+  ['Graphs', 526],
+  ['Strings', 706],
+];
+
+function logBookChapters(data) {
+  for (let [key, val] of data) {
+    console.log(key.padEnd(15, '_') + ' ' + val);
+  }
+}
+logBookChapters(bookChapters);
