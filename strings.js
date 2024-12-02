@@ -121,3 +121,27 @@ const message2 = 'This is test! ';
 console.log(message2.repeat(5));
 
 console.log(`The are 5 planes in port: ${'✈️'.repeat(5)}`);
+
+console.log('--------------------------- BREAK ----------------------------');
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+const prepDataFlights = flights.trim().split('+');
+console.log(prepDataFlights);
+
+for (const data of prepDataFlights) {
+  let dataSeperate = data.replaceAll('_', ' ').trim().split(';');
+  const part1 = dataSeperate[0].startsWith('Delayed') ? '🔴' : '';
+  const output = [
+    part1,
+    dataSeperate[0],
+    'from',
+    dataSeperate[1].toUpperCase().slice(0, 3),
+    'to',
+    dataSeperate[2].toUpperCase().slice(0, 3),
+    `(${dataSeperate[3].replace(':', 'h')})`,
+  ]
+    .join(' ')
+    .padStart(40, ' ');
+  console.log(output);
+}
